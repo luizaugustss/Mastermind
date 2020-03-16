@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+   
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script>
+    function valido(){
+        var cor1 = document.formulario.cor1.value;
+        var cor2 = document.formulario.cor2.value;
+        var cor3 = document.formulario.cor3.value;
+        var cor4 = document.formulario.cor4.value;
+
+    if(cor1==""){
+			      	  alert("escolha uma cor na posição 1!!");
+				        document.formulario.cor1.focus();
+				        return false;
+		          	}
+    if(cor2==""){
+			      	  alert("escolha uma cor na posição 2!!");
+				        document.formulario.cor2.focus();
+				        return false;
+		          	}
+    if(cor3==""){
+			      	  alert("escolha uma cor na posição 3!!");
+				        document.formulario.cor3.focus();
+				        return false;
+		          	} 
+    if(cor4==""){
+			      	  alert("escolha uma cor na posição 4!!");
+				        document.formulario.cor4.focus();
+				        return false;
+		          	}      
+                      return true;                                                     
+    }
+    </script>
+
+    <title>Mastermind</title>
+  </head>
+  <body>
+
+     
+    <br />
+    <center><h1 style="font-family: fantasy;font-size:72px">  Mastermind </h1></center>
+    <br />
+    <br />
+    <center>  <div  style="width: 60%;
+   height: 300px;"> 
+  
+  <form id=001 name= formulario method="post" action=jogar.php onsubmit="return valido()">  
+    <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Cor 1</label>
+            <div class="col-sm-10">
+                <select name="cor1" class="form-control" id="cor1">
+                    <option value="">Selecione</option>			
+                    <option style="color:#FFD700;" value="1">Amarelo</option>
+                    <option style="color:#1c30e2;" value="2">Azul</option>
+                    <option style="color:#FF4500;" value="3">Laranja</option>
+                    <option style="color:#1C1C1C;" value="4">Preto</option>
+                    <option style="color:#228B22;" value="5">Verde</option>
+                    <option style="color:#8B0000;" value="6">Vermelho</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Cor 2</label>
+                <div class="col-sm-10">
+                    <select name="cor2" class="form-control" id="cor2">
+                        <option value="">Selecione</option>			
+                        <option style="color:#FFD700;" value="1">Amarelo</option>
+                        <option style="color:#1c30e2;" value="2">Azul</option>
+                        <option style="color:#FF4500;" value="3">Laranja</option>
+                        <option style="color:#1C1C1C;" value="4">Preto</option>
+                        <option style="color:#228B22;" value="5">Verde</option>
+                        <option style="color:#8B0000;" value="6">Vermelho</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Cor 3</label>
+                    <div class="col-sm-10">
+                        <select name="cor3" class="form-control" id="cor3">
+                            <option value="">Selecione</option>			
+                            <option style="color:#FFD700;" value="1">Amarelo</option>
+                            <option style="color:#1c30e2;" value="2">Azul </option>
+                            <option style="color:#FF4500;" value="3">Laranja</option>
+                            <option style="color:#1C1C1C;" value="4">Preto</option>
+                            <option style="color:#228B22;" value="5">Verde</option>
+                            <option style="color:#8B0000;" value="6">Vermelho</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Cor 4</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="cor4" id="cor4">	
+                                <option value="">Selecione</option>	
+                                <option style="color:#FFD700;" value="1">Amarelo</option>
+                                <option style="color:#1c30e2;" value="2">Azul </option>
+                                <option style="color:#FF4500;" value="3">Laranja</option>
+                                <option style="color:#1C1C1C;" value="4">Preto</option>
+                                <option style="color:#228B22;" value="5">Verde</option>
+                                <option style="color:#8B0000;" value="6">Vermelho</option>
+                            </select>
+                        </div>
+                    </div>            
+        <button type="submit" class="btn btn-outline-primary">testar senha</button></form> 
+ </div> </center>
+ <center><a <button  href="menu.html" class="btn btn-outline-secondary" >menu</button></a></center><br />
+
+    <br />
+    <br />
+  
+      
+		
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script> 
+            function valido(){
+                var usuario = document.formulario.usuario.value;
+                var nome = document.formulario.nome.value;
+                var telefone = document.formulario.telefone.value;
+                var regextelefone = /^\([0-9]{2}\) [0-9]{5}\-[0-9]{4}$/;
+                var senha = document.formulario.senha.value;
+                var regexsenha = /^(?=(?:.*?[A-Z]){3})(?=(?:.*?[0-9]){2})(?=(?:.*?[!@#$%*()_+^&}{:;?.]){1})(?!.*\s)[0-9a-zA-Z!@#$%;*(){}_+^&]*$/; 
+                if(senha.length > 8){
+			      	  alert("A senha deve conter no maximo 8 digitos!!!");
+				        document.formulario.senha.focus();
+				        return false;
+		          	}
+                if(nome.length > 30){
+			      	  alert("O nome deve conter no maximo 30 digitos!!!");
+				        document.formulario.senha.focus();
+				        return false;
+		          	}
+                if(usuario.length > 10){
+			      	  alert("O usuario deve conter no maximo 10 digitos!!!");
+				        document.formulario.usuario.focus();
+				        return false;
+		          	}
+                
+                
+                if(!regextelefone.exec(telefone)){
+                        alert("telefone deve seguir o formato (XX) XXXXX-XXXX");
+                        document.formulario.telefone.focus();
+                        return false;
+                    }
+                
+                
+                if(!regexsenha.exec(senha)) {
+                        alert("A senha deve conter no mínimo 3 caracteres em maiúsculo, 2 números e 1 caractere especial!");
+                        document.formulario.senha.focus();
+                        return false;
+                    }
+                 
+                return true;
+            }
+            </script>
+    <title>Mastermind</title>
+  </head>
+  <body>
+
+  
+    <br />
+    <center><h1>  Cadastro de Jogador</h1></center>
+    <br />
+ 
+    <br />
+    <center><form id=001 name="formulario" method="post" action="cadastrar.php" onsubmit="return valido()">
+
+        <div class="form-label-group"> 
+                <label>Usuario</label>
+                <input type="text" name="usuario" id="usuario" size = "15"  placeholder="Usuário"  autofocus required /><br />
+                </div>		
+      <br />
+        <div class="form-label-group">
+                <label >Senha</label>
+                <input type="password" name="senha" id="senha" size = "15"  placeholder="Senha" autofocus required /><br />
+            </div>	
+            <br />
+            <div class="form-label-group"> 
+                    <label>Nome</label>
+                    <input type="text" name="nome" id="nome" size = "15"  placeholder="Nome"  autofocus required /><br />
+                    </div>		
+                    <br />	
+              <div class="form-label-group"> 
+                  <label>Telefone</label>
+             <input type="text" name="telefone" id="telefone" size = "15"  placeholder="(XX) XXXXX-XXXX"  autofocus required /><br />
+              </div>		
+              <br />
+            
+          <button   class="btn btn-outline-primary" type="submit">Cadastrar</button></form>    </center>
+        <br />
+    <center><a <button  href="login.html" class="btn btn-outline-secondary" >Voltar</button></a></center><br />
+      
+		
+</body>
+</html>
